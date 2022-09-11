@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    /* font-family: 'Bree Serif', serif; */
+    /* font-family: 'Baloo Bhai 2', cursive; */
+    font-family: 'Quicksand', sans-serif;
+
+
+    /* margin: 0;
+    padding: 0; */
+}
+
+body {
+    --color-primary: #009579;
+    --color-primary-dark: #007f67;
+    --color-secondary: #252c6a;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    /* background: url(./background.jpg); */
+    background-color: #88D1F1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 460px;
+    max-width: 430px;
+    margin-top: 3rem;
+    margin-left: -15rem;
+    padding: 1rem;
+    height: 440px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background-color: rgb(17, 20, 24);
+}
+#login {
+    border: 2px solid #ffffff;
+    width: 460px;
+    max-width: 430px;
+    margin: 5.2rem;
+    padding: 2rem;
+    height: 440px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background-color: rgb(17, 20, 24);
+}
+
+#createAccount {
+    border: 2px solid #ffffff;
+    width: 460px;
+    max-width: 430px;
+    margin: 5.2rem;
+    padding: 2rem;
+    height: 440px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background-color: rgb(17, 20, 24);
+}
+
+.container,
+.form-input,
+.form-button {
+    font: 500 1rem 'Quicksand', sans-serif;
+    background-color: rgb(17, 20, 24);
+    color: #ffffff;
+}
+
+.form-hidden {
+    display: none;
+}
+
+.form>*:first-child {
+    margin-top: 0;
+}
+
+.form>*:last-child {
+    margin-bottom: 0;
+}
+
+.form-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 1.8px;
+}
+
+.form-message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-message-success {
+    color: var(--color-success);
+}
+
+.form-message-error {
+    color: var(--color-error);
+}
+
+.form-input-group {
+    margin-bottom: 1rem;
+}
+
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background-color: rgb(17, 20, 24);
+    transition: background 0.2s border-color 0.2s;
+    letter-spacing: 1.25px;
+
+}
+
+.form-input:focus {
+    border-color: var(--color-primary);
+    /* background: #ffffff; */
+}
+
+.form-input-error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.form-input-error-message {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.form-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+    margin-bottom: 1.2rem;
+}
+
+.form-button:hover {
+    background: var(--color-primary-dark);
+}
+
+.form-button:active {
+    transform: scale(0.98);
+}
+
+.form-text {
+    text-align: center;
+}
+
+.form-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+    color: #0091E6
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+
+.section1 {
+    position: absolute;
+    top: 0;
+    left: 20;
+    width: 100%;
+    height: 200vh;
+    background: radial-gradient(ellipse at bottom, #0D1E31, #111);
+    background-position-x: center;
+}
+
+.section2 {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes animateBg {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
+    animation: animate 3s linear infinite;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+
+    }
+
+    100% {
+        transform: rotate(315deg) translateX(-1500px);
+        opacity: 0;
+
+    }
+
+}
+
+span:nth-child(1) {
+    top: 0;
+    right: 0;
+    left: initial;
+    animation-delay: 0;
+    animation-duration: 3s;
+}
+
+span:nth-child(2) {
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 4s;
+}
+
+span:nth-child(3) {
+    top: 80px;
+    right: 0px;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 4s;
+}
+
+span:nth-child(4) {
+    top: 0;
+    right: 180px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 3.5s;
+}
+
+span:nth-child(5) {
+    top: 0;
+    right: 400px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 4.5s;
+}
+
+span:nth-child(6) {
+    top: 0;
+    right: 600px;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 5s;
+}
+
+span:nth-child(7) {
+    top: 300px;
+    right: 0px;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 3.75s;
+}
+
+span:nth-child(8) {
+    top: 0px;
+    right: 700px;
+    left: initial;
+    animation-delay: 1.4s;
+    animation-duration: 3.25s;
+}
+
+span:nth-child(9) {
+    top: 0px;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.75s;
+    animation-duration: 4.25s;
+}
+
+span:nth-child(10) {
+    top: 0px;
+    right: 1000px;
+    left: initial;
+    animation-delay: 2.75s;
+    animation-duration: 4.25s;
+}
+
+::placeholder {
+    color: white
+}
+
+#state {
+    background-color: rgb(17, 20, 24);
+}
+#createAccount{
+    height: 500px;
+    width: 460px;
+    max-width: 430px;
+    margin: 5.2rem;
+    padding: 2rem;
+    /* height: 440px; */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background-color: rgb(17, 20, 24);
+    border: 2px solid #ffffff;
+}
+    </style>
+    <!-- <link rel="stylesheet" href="login_signup.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="section1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <section class="section2">
+            <div class="container">
+                
+                <form action="" class="form" id="login">
+                    <h1 class="form-title">Login</h1>
+                    <div class="form-message form-message-error"></div>
+
+                    <div class="form-input-group">
+                        <input type="text" class="form-input" autodfocus placeholder="Username or email">
+                        <div class="form-input-error-message"></div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <input type="password" class="form-input" autofocus placeholder="Password">
+                        <div class="form-input-error-message"></div>
+                    </div>
+
+                    <a href="http://127.0.0.1:5502/index.html">
+                        <button class="form-button" type="submit">Login</button>
+                    </a>
+
+                    <p class="form-text">
+                        <a href="#" class="form-link">Forgot Your Password</a>
+                    </p>
+
+                    <p class="form-text">
+                        <a class="form-link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+                    </p>
+
+                </form>
+
+
+                <form action="" class="form form-hidden" id="createAccount">
+                    <h1 class="form-title">Create Account</h1>
+                    <div class="form-message form-message-error"></div>
+
+                    <div class="form-input-group">
+                        <input type="text" id="signupUsername" class="form-input" autodfocus placeholder="Username">
+                        <div class="form-input-error-message"></div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <input type="email" class="form-input" autodfocus placeholder="Email Address">
+                        <div class="form-input-error-message"></div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <input type="password" class="form-input" autofocus placeholder="Password">
+                        <div class="form-input-error-message"></div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <input type="password" class="form-input" autofocus placeholder="Confirm Password">
+                        <div class="form-input-error-message"></div>
+                    </div>
+
+                    <button class="form-button" type="submit">Continue</button>
+
+
+                    <p class="form-text">
+                        <a class="form-link" href="./" id="linkLogin">Already have an account? Sign in</a>
+                    </p>
+
+                </form>
+
+            </div>
+        
+        </section>
+    </section>
+    <script>
+        //formElement--> Elements of form
+//type--> Succes or error
+//message--> what message we want to print
+
+function setFormMessage(formElement, type, message) {
+    const messageElement = formElement.querySelector(".form-message");
+
+    messageElement.textContent = message;
+    messageElement.classList.remove("form-message-success", "form-message-error");
+    messageElement.classList.add(`form-message-${type}`);
+}
+
+
+
+function setInputError(inputElement, message) {
+    inputElement.classList.add("form-input-error");
+    inputElement.parentElement.querySelector(".form-input-error-message").textContent = message;
+}
+
+function clearInputError(inputElement) {
+    inputElement.classList.remove("form-input-error");
+    inputElement.parentElement.querySelector(".form-input-error-message").textContent = "";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.querySelector("#login");
+    const createAccountForm = document.querySelector("#createAccount");
+
+    document.querySelector("#linkCreateAccount").addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.add("form-hidden");
+        createAccountForm.classList.remove("form-hidden");
+    });
+
+    document.querySelector("#linkLogin").addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.remove("form-hidden");
+        createAccountForm.classList.add("form-hidden");
+    });
+
+    loginForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        //Perform AJAX/ Fetch Operations
+
+        setFormMessage(loginForm, "error", "Invalid username/password combination");
+    });
+
+    document.querySelectorAll(".form-input").forEach(inputElement => {
+        inputElement.addEventListener("blur", e => {
+            if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 8) {
+                setInputError(inputElement, "Username must be atleast 8 characters in length");
+            }
+        });
+
+        inputElement.addEventListener("input", e => {
+            // e.preventDefault();
+            clearInputError(inputElement);
+        });
+    });
+});
+
+    </script>
+</body>
+
+</html>

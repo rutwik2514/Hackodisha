@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo Bhai 2', cursive;
+  box-sizing: border-box;
+}
+
+body {
+  --color-primary: #009579;
+  --color-primary-dark: #007f67;
+  --color-secondary: #252c6a;
+  --color-error: #cc3333;
+  --color-success: #4bb544;
+  --color-text1: #fafafa;
+  --color-text2: #e6e7f0;
+  --color-text3: #303C6C;
+  --color-textStat: #efe7e8;
+  --border-radius: 4px;
+
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  margin-left: 200vw;
+  width: 580px;
+  max-width: 580px;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  border: 1px solid white;
+}
+
+.form>*:first-child {
+  margin-top: 0;
+}
+
+.form>*:last-child {
+  margin-bottom: 0;
+}
+
+.form-title {
+  margin-bottom: 2rem;
+  text-align: center;
+  /* color: #00887A; */
+  /* color: #EE4C7C;
+    co */
+  color: white;
+}
+
+.form-message {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--color-text1)
+}
+
+.form-input-group {
+  margin-bottom: 1rem;
+  color: var(--color-text1);
+
+}
+
+#name {
+  background-color: rgb(17, 20, 24);
+}
+
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 0.50rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid #dddddd;
+  outline: none;
+  transition: background 0.2s border-color 0.2s;
+  font-size: 0.85rem;
+  color: var(--color-text2);
+
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  background: #ffffff;
+}
+
+
+.form-button {
+  width: 100%;
+  padding: 1rem 4rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius);
+  outline: none;
+  cursor: pointer;
+  background: var(--color-primary);
+}
+
+.form-button:hover {
+  background: var(--color-primary-dark);
+}
+
+.form-button:active {
+  transform: scale(0.98);
+}
+
+.form-text {
+  text-align: center;
+}
+
+.form-link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-link:hover {
+  text-decoration: underline;
+}
+
+.form-statement {
+  font-size: 1rem;
+  color: var(--color-textStat);
+
+}
+
+.section1 {
+  position: absolute;
+  top: 0;
+  left: 20;
+  width: 100%;
+  height: 200vh;
+  background: radial-gradient(ellipse at bottom, #0D1E31, #111);
+  background-position-x: center;
+}
+
+.section2 {
+  margin-top: 7vh;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes animateBg {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
+  animation: animate 3s linear infinite;
+}
+
+span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+
+  }
+
+  100% {
+    transform: rotate(315deg) translateX(-1500px);
+    opacity: 0;
+
+  }
+
+}
+
+span:nth-child(1) {
+  top: 0;
+  right: 0;
+  left: initial;
+  animation-delay: 0;
+  animation-duration: 1s;
+}
+
+span:nth-child(2) {
+  top: 0;
+  right: 80px;
+  left: initial;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+}
+
+span:nth-child(3) {
+  top: 80px;
+  right: 0px;
+  left: initial;
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+}
+
+span:nth-child(4) {
+  top: 0;
+  right: 180px;
+  left: initial;
+  animation-delay: 0.6s;
+  animation-duration: 1.5s;
+}
+
+span:nth-child(5) {
+  top: 0;
+  right: 400px;
+  left: initial;
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+}
+
+span:nth-child(6) {
+  top: 0;
+  right: 600px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+
+span:nth-child(7) {
+  top: 300px;
+  right: 0px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 1.75s;
+}
+
+span:nth-child(8) {
+  top: 0px;
+  right: 700px;
+  left: initial;
+  animation-delay: 1.4s;
+  animation-duration: 1.25s;
+}
+
+span:nth-child(9) {
+  top: 0px;
+  right: 1000px;
+  left: initial;
+  animation-delay: 0.75s;
+  animation-duration: 2.25s;
+}
+
+span:nth-child(10) {
+  top: 0px;
+  right: 1000px;
+  left: initial;
+  animation-delay: 2.75s;
+  animation-duration: 2.25s;
+}
+
+::placeholder {
+  color: white
+}
+
+#state {
+  background-color: rgb(17, 20, 24);
+}
+
+#grade {
+  background-color: rgb(17, 20, 24);
+}
+
+#category {
+  background-color: rgb(17, 20, 24);
+}
+
+#specialCategory {
+  background-color: rgb(17, 20, 24);
+}
+
+#income {
+  background-color: rgb(17, 20, 24);
+}

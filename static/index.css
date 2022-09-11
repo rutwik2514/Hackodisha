@@ -1,0 +1,466 @@
+/* CSS Reset  */
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Bree Serif', serif; */
+    font-family: 'Baloo Bhai 2', cursive;
+    box-sizing: border-box;
+}
+
+body {
+    --color-primary: #009579;
+    --color-primary-dark: #007f67;
+    --color-secondary: #252c6a;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+    /* background-color: ; */
+    background-color: rgb(17, 20, 24);
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables  */
+:root {
+    --navbar-height: 60px;
+}
+
+/* Navigation Bar  */
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    opacity: 5;
+    overflow: hidden;
+    background-color: black;
+}
+
+#navbar::before {
+    content: "";
+    /* background-color: black; */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* z-index: -1; */
+    /* opacity: 5.0; */
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+
+/* Navigation Bar: Logo and image  */
+
+#logo {
+    margin: 10px 34px;
+    display: flex;
+    list-style: none;
+    font-size: 1.3rem;
+    float: left;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* #logo img {
+    height: 60px;
+    margin: 3px 6px;
+} */
+
+
+/* Navigation Bar: List Styling*/
+#navbar ul {
+    display: flex;
+    /* font-family: 'Baloo Bhai 2', cursive; */
+}
+
+#navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#navbar ul li a {
+    float: left;
+    color: white;
+    display: flex;
+    text-align: center;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+.nav-right {
+    position: relative;
+    margin-left: 45%;
+}
+
+.loginBtn {
+    /* padding: 1rem 2rem; */
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.loginBtn:hover {
+    background: var(--color-primary-dark);
+}
+
+.loginBtn:active {
+    transform: scale(0.90);
+}
+
+/* .loginBtn {
+    display: flex;
+    justify-items: right;
+    align-items: right;
+    float: right;
+} */
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables  */
+:root {
+    --navbar-height: 59px;
+}
+
+/* Navigation Bar  */
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    top: 0px;
+    left: 0px;
+}
+
+/* Navigation Bar: Logo and image  */
+
+#logo {
+    margin: 10px 34px;
+}
+
+#logo img {
+    height: 60px;
+    margin: 3px 6px;
+}
+
+/* Navigation Bar: List Styling*/
+#navbar ul {
+    display: flex;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+#navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+#navbar ul li a {
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+/* Home Section  */
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    background: url('/backgroundimg4_edited.jpg') no-repeat center center/cover;
+    height: 642px;
+    width: 100%;
+    z-index: -1;
+    opacity: 75;
+    top: 0px;
+    left: 0px;
+}
+
+#home h1 {
+    color: white;
+    text-align: center;
+    /* font-family: 'Bree Serif', serif; */
+    font-family: 'Baloo Bhai 2';
+
+}
+
+#home p {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    /* font-family: 'Bree Serif', serif; */
+    font-family: 'Baloo Bhai 2', cursive;
+
+}
+
+/* Services Section  */
+
+#services {
+    margin: 34px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#link-box {
+    text-align: center;
+    background-image: url("./link3.png");
+}
+
+ #link-box a {
+    text-decoration: none;
+    margin-bottom: 15px;
+} 
+
+
+#services .box {
+    border: 3px solid var(--color-primary);
+    padding: 1px;
+    margin: 2px 55px;
+    border-radius: 28px;
+    /* background-image: url("./link3.png"); */
+    /* background: #f2f2f2; */
+    background: #D3D3D3;
+    margin-bottom: 20px;
+    font-family: 'Baloo Bhai 2', cursive;
+    /* 
+    padding: 20px;
+    margin: 25px 50px;
+    border-radius: 28px; */
+}
+
+#services .box img {
+    /* height: 160px; */
+    margin: 0;
+    /* height: 200px;
+    width: 100px; */
+    height: 350px;
+    width: 233px;
+    display: block;
+    border-radius: 28px;
+}
+
+#services .box p {
+    /* font-family: 'Bree Serif', serif; */
+    font-family: 'Baloo Bhai 2', cursive;
+    text-size-adjust: 1px;
+
+}
+
+/* Client Section  */
+#client-section {
+    position: relative;
+}
+
+#client-section::before {
+    content: "";
+    position: absolute;
+    background: url(../bg1.jpg);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: .4;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clients img {
+    height: 115px;
+}
+
+.client-item {
+    padding: 34px;
+}
+
+/* Contact-Section  */
+#contact {
+    position: relative;
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    background: url(../contact.jpg) no-repeat center center/cover;
+}
+
+#contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
+}
+
+#contact-box input,
+#contact-box textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.05rem;
+}
+
+#contact-box form {
+    width: 40%;
+}
+
+#contact-box label {
+    font-size: 1.2rem;
+    font-family: 'Bree Serif', serif;
+
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+/* Utility Class  */
+.h-primary {
+    font-size: 3rem;
+    padding: 12px;
+    /* font-family: 'Bree Serif', serif; */
+    color: #ffffff;
+    font-family: 'Baloo Bhai 2';
+
+}
+
+.h-secondary {
+    font-size: 1.6rem;
+    padding: 12px;
+    /* font-family: 'Bree Serif', serif; */
+    font-family: 'Baloo Bhai 2';
+
+
+}
+
+.btn {
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 17px;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: darkgray;
+    font-weight: bold;
+}
+
+#loginBtn {
+    width: 150px;
+    padding: 4px 8px;
+    margin: 24px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background: #009579;
+    position: absolute;
+    right: 5vw;
+    top: 1vh;
+}
+
+#loginBtn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+#loginBtn:active {
+    transform: scale(0.98);
+}
+
+/* background-color: rgb(17,20,24); */
+
+/* #loginItem {
+    display: flex;
+    justify-content: right;
+    align-items: self;
+    float: right;
+} */
+
+#vision {
+    margin: 34px;
+    display: block;
+    color: #bdc9c9;
+}
+
+.sublinks {
+    margin: 29px;
+    padding: 7px;
+}
+
+#link-box a:hover {
+    text-decoration: underline;
+    font-size: 18px;
+}
