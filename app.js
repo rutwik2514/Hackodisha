@@ -1,7 +1,4 @@
 const express = require("express");
-//vadhu
-//sampada
-//raviteja
 const { link } = require("fs");
 const path = require("path");
 const app = express();
